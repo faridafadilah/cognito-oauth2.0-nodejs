@@ -20,14 +20,6 @@ let getUserInfo = async ({ accessToken }) => {
       Authorization: `Bearer ${accessToken}`,
     },
   });
-
-  // "data" looks like:
-  // {
-  //   sub: '6010f967-5ed...',
-  //   email_verified: 'true',
-  //   email: 'example@example.com',
-  //   username: '6010f967-5ed...'
-  // }
   console.log("/oauth2/userInfo", data);
   return data;
 };
@@ -46,15 +38,6 @@ let postToken = async ({ code }) => {
     method: "post",
     data: qs.stringify(params),
   });
-
-  // "data" looks like:
-  // {
-  //   id_token: "eyJra...",
-  //   access_token: "eyJra...",
-  //   refresh_token: "eyJjd...",
-  //   expires_in: 3600,
-  //   token_type: "Bearer",
-  // };
   console.log("/oauth2/token", data);
   return data;
 };
